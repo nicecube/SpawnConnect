@@ -1,0 +1,20 @@
+{
+    "Group": "ca.nicecube",
+    "Name": "SpawnConnect",
+    "Version": "0.0.0",
+    "Description": "Teleport players to hub spawn on every connection.",
+    "Authors": [
+        {
+            "Name": "nicecube",
+            "Email": "contact@nicecube.ca",
+            "Url": "https://nicecube.ca"
+        }
+    ],
+    "Website": "https://nicecube.ca",
+    "DisabledByDefault": false,
+    "IncludesAssetPack": false,
+    "Dependencies": {},
+    "OptionalDependencies": {},
+    "ServerVersion": "*",
+    "Main": "ca.nicecube.spawnconnect.SpawnConnectPlugin"
+}
