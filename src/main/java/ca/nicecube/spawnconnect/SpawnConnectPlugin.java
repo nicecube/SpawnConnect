@@ -8,6 +8,7 @@ import com.hypixel.hytale.server.core.plugin.JavaPlugin;
 import com.hypixel.hytale.server.core.plugin.JavaPluginInit;
 
 import javax.annotation.Nonnull;
+import java.nio.file.Path;
 
 public class SpawnConnectPlugin extends JavaPlugin {
     private SpawnConnectConfig config;
@@ -18,7 +19,13 @@ public class SpawnConnectPlugin extends JavaPlugin {
 
     @Override
     protected void setup() {
-        SpawnConnectConfigService configService = new SpawnConnectConfigService(this.getLogger(), this.getDataDirectory());
+        Path configuredDataDirectory = this.getDataDirectory();
+        Path parentDirectory = configuredDataDirectory.getParent();
+        if (parentDirectory != null) {
+            configuredDataDirectory = parentDirectory.resolve("SpawnConnect");
+        }
+
+        SpawnConnectConfigService configService = new SpawnConnectConfigService(this.getLogger(), configuredDataDirectory);
         this.config = configService.loadOrCreate();
 
         this.getEventRegistry().registerGlobal(

@@ -1,7 +1,7 @@
 {
     "Group": "ca.nicecube",
     "Name": "SpawnConnect",
-    "Version": "0.2.0",
+    "Version": "0.2.1",
     "Description": "Teleport players to hub spawn on every connection.",
     "Authors": [
         {
